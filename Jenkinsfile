@@ -24,7 +24,6 @@ pipeline {
 		stage("inegration test"){
 			agent{
 				docker{
-				       reuseNode flase
 				       image 'ubuntu'
 				}
 			}
