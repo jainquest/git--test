@@ -14,7 +14,8 @@ pipeline {
 	stage('three') {
             steps {
                 when{
-			not{branch "master"}
+			not {
+				branch "master"}
 		     }
 		steps{ echo "hello"}
             }
@@ -26,12 +27,17 @@ pipeline {
 				}
 		stage("inegration test"){
 			agent{
-				docker{reusenode flase
-				       image 'ubentu'}
+				docker{
+				       reuseNode flase
+				       image 'ubentu'
 				}
-			steps{echo "running inegration test"}
+			}
+			steps{
+			      echo "running inegration test"}
 			}
             }
         }
     }
+}
+}
 }
