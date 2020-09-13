@@ -27,7 +27,7 @@ pipeline {
 		stage("inegration test"){
 			agent{
 				docker{reusenode flase
-				       image 'ubendu'}
+				       image 'ubentu'}
 				}
 			steps{echo "running inegration test"}
 			}
