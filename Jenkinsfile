@@ -14,7 +14,7 @@ pipeline {
 	stage('three') {
             steps {
                 when{
-			not {branch "master"}
+			not {branch "child"}
 		     }
 		steps{ echo "hello"}
             }
