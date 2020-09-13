@@ -25,7 +25,7 @@ pipeline {
 			agent{
 				docker{
 				       reuseNode flase
-				       image 'ubentu'
+				       image 'ubuntu'
 				}
 			}
 			steps{
