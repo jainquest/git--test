@@ -1,0 +1,37 @@
+pipeline {
+    agent any
+    stages {
+        stage('one') {
+            steps {
+                echo "hi i am jain"
+            }
+        }
+	stage('two') {
+            steps {
+                input("do you want to proceed")
+            }
+        }
+	stage('three') {
+            steps {
+                when{
+			not{branch "master"}
+		     }
+		steps{ echo "hello"}
+            }
+        }
+	stage('four') {
+            parallel{
+		stage("unittest"){
+			steps{echo "running unit test"}
+				}
+		stage("inegration test"){
+			agent{
+				docker{reusenode flase
+				       immage 'ubendu'}
+				}
+			steps{echo "running inegration test"}
+			}
+            }
+        }
+    }
+}
