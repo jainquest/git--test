@@ -22,11 +22,6 @@ pipeline {
 			steps{echo "running unit test"}
 				}
 		stage("inegration test"){
-			agent{
-				docker{
-				       image 'ubuntu'
-				}
-			}
 			steps{
 			      echo "running inegration test"}
 			}
